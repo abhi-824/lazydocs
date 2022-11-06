@@ -106,6 +106,9 @@ Shown below are the sample api calls in this project:
 <p>Step 4: Swagger Json will keep on updating</p>
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/55046095/200155470-d636e441-bbe8-43f1-8993-ec982eeb5799.png">
 
+### Architecture: 
+
+![hackCBS5 0](https://user-images.githubusercontent.com/55046095/200155831-c30f437a-b05f-4aec-b016-68d0ec574461.gif)
 
 ### Built With
 
