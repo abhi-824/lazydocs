@@ -15,11 +15,13 @@ const getResponseFromServer = async (req: Request, res: Response) => {
     const response = (await axios.get(fullPath)).data;
     const properties = {};
     for (const property in response) {
-        const obj = {};
-        obj["type"] = typeof response[property];
-        properties[property] = obj;
+      const obj = {};
+      console.log(property)
+      obj["type"] = typeof response[property];
+      properties[property] = obj;
     }
-    const swaggerPath = {};
+    console.log(properties)
+    const swaggerPath = swaggerDocument.paths;
     swaggerPath[endpoint] = {
         get: {
             produces: ["application/json"],
@@ -73,7 +75,7 @@ const postResponseFromServer = async (req: Request, res: Response) => {
                     required: true,
                     schema: {
                         type: typeof response,
-                        $ref: "#/definitions/Template",
+                        properties:requestProperties,
                     },
                 },
             ],

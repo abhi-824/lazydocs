@@ -14,7 +14,36 @@
     "host": "localhost:5000",
     "basePath": "/api",
     "paths": {
-        "/api/template/8": {
+        "/api/template": {
+            "post": {
+                "produces": ["application/json"],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Template object",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "html": { "type": "string" },
+                                "photo": { "type": "string" }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successfull operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": { "data": { "type": "object" } }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/template/10": {
             "get": {
                 "produces": ["application/json"],
                 "responses": {
@@ -23,6 +52,26 @@
                         "schema": {
                             "type": "object",
                             "properties": { "data": { "type": "object" } }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/template/11": {
+            "get": {
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "successfull operation",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "id": { "type": "number" },
+                                "html": { "type": "string" },
+                                "photo": { "type": "string" },
+                                "createdAt": { "type": "string" },
+                                "updatedAt": { "type": "string" }
+                            }
                         }
                     }
                 }
