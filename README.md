@@ -10,10 +10,7 @@
   <h3 align="center">Lazy Docs</h3>
 
   <p align="center">
-    A
-command-line tool available as an NPM package which creates a starter backend project consisting of CRUD API endpoints
-and a configured PostgreSQL database (using Prisma ORM) from just an ER Diagram which the user needs to provide in
-JSON format.
+    A third party tool that runs on a separate server and redirects the api calls to the port you specify and stores the api calls and convert the calls to swagger.json which then automates the process of api docs building. 
     <br />
     <br />
     ·
@@ -54,19 +51,12 @@ JSON format.
 
 ## About The Project
 
-CRUDify is a command-line tool to kickstart a backend project by just providing an ER Diagram.
+LazyDocs is a third party tool to automate the building and maintanance of API docs in a backend project by just calling the API.
 <br>
 <br>
-The user needs to create a database
-schema in JSON format and then install
-the package. Next step is to invoke the package
-from the command line and pass the
-name of the schema file along with it.
+The user needs to clone the repository and add the specified PORT in which the original server is running. 
 <br>
-<br>
-This creates a backend project with the corresponding database schema file for Prisma ORM. Further, it also contains all the
-endpoints for CRUD operations for all
-database tables.
+<br>This creaetes a swagger.json in the folder itself with the API calls which are called through the process.
 
 <br>
 
@@ -92,39 +82,34 @@ yarn dev
 
 ## How To Use
 
-Consider the following ER Diagram
+Consider the following Server
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/57593654/176952224-d029b872-e281-4b0c-9fbc-2567703f1a92.png" alt="BFS" width="700px">
 
-Shown below will be the corresponding schema for CRUDify
+<img src="https://user-images.githubusercontent.com/55046095/200155344-0f92a132-cb2d-48e1-a7f1-866d8ccf320b.png" alt="BFS" width="700px">
 
-<p>Step 1: Create a new folder for your project</p>
-<img src="https://user-images.githubusercontent.com/57593654/176953567-444396b0-8bb4-43d8-8881-7bf963659be9.png" alt="Step 1: Create a new folder for your project" width="700px">
 
-<p>Step 2: Create your schema as a JSON file</p>
-<img src="https://user-images.githubusercontent.com/57593654/176953572-d0dbfec7-1f10-4821-b128-1feea9aceae3.png" alt="Step 2: Create your schema as a JSON file" width="700px">
+Shown below are the sample api calls in this project: 
 
-<p>Step 3: Install the crudify-dtu NPM package</p>
-<img src="https://user-images.githubusercontent.com/57593654/176953573-39a69d7d-48f6-4288-a7a5-cdbe45a122e5.png" alt="Step 3: Install the crudify-dtu NPM package" width="700px">
+<img src="https://user-images.githubusercontent.com/55046095/200155369-ed59e311-f06f-4f44-82b3-d8ad25e53ab4.png" alt="BFS" width="700px">
 
-<p>Step 4: CRUDify your ER Diagram using npx crudify-dtu “schema.json” command</p>
-<img src="https://user-images.githubusercontent.com/57593654/176953577-a5c299b9-4ce7-4599-b10a-4dc6e2169ea5.png" alt="Step 4: CRUDify your ER Diagram using npx crudify-dtu “schema.json” command" width="700px">
 
-<p>You can see the equivalent schema created in Prisma ORM in app/prisma/schema.prisma file
-This schema is converted into raw SQL queries after setup (after Step 5) 
-</p>
-<img src="https://user-images.githubusercontent.com/57593654/176953580-7e04a74b-940f-450d-afd4-4a7bd1b7270d.png" alt="Equivalent schema created in Prisma ORM" width="700px">
+<p>Step 1: Add PORT into the env</p>
+<img src="https://user-images.githubusercontent.com/55046095/200155392-56594c0d-9149-4474-8ebb-6c6da5fc9a66.png" alt="BFS" width="700px">
 
-<p>You can see app/src/routes/ contains the APIs for blog, review and user models</p>
-<img src="https://user-images.githubusercontent.com/57593654/176953583-cd0f3799-897b-4de1-8f3c-769d23744dab.png" alt="APIs for blog, review and user models" width="700px">
+<p>Step 2: Start the server on lazy docs</p>
+<img  alt="image" src="https://user-images.githubusercontent.com/55046095/200155425-92dd317b-acac-4f46-8dc3-b8946037059c.png" width="700px">
 
-<p>Step 5:  cd into app directory and follow the instructions shown below for setup</p>
-<img src="https://user-images.githubusercontent.com/57593654/176953586-700d8001-1ea3-4ae0-b136-6aebb95cf7d4.png" alt="Instructions shown below for setup" width="700px">
+<p>Step 3: Start calling api calls from PORT 3001 now.</p>
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/55046095/200155444-5c4b58c4-d6b7-4b0c-9b67-14b7290667b5.png">
+
+<p>Step 4: Swagger Json will keep on updating</p>
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/55046095/200155470-d636e441-bbe8-43f1-8993-ec982eeb5799.png">
+
 
 ### Built With
 
-> TypeScript
+TypeScript, mostly
 
 ## Contact
 
